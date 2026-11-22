@@ -40,16 +40,16 @@ export default function FounderSection({ onOpenBooking }) {
                 </div>
               </div>
 
-              {/* Floating Award Certificate Badge */}
+              {/* Award Certificate Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                className="absolute -bottom-6 -right-4 sm:-right-8 p-3.5 rounded-2xl bg-[#07080a]/95 backdrop-blur-xl border border-[#CFA868]/40 shadow-2xl max-w-[220px]"
+                className="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-6 p-3.5 rounded-2xl bg-[#07080a]/95 backdrop-blur-xl border border-[#CFA868]/40 shadow-2xl max-w-full sm:max-w-[220px]"
               >
                 <div className="flex items-center gap-2 mb-1.5">
-                  <div className="w-7 h-7 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400">
+                  <div className="w-7 h-7 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
                     <Award className="w-4 h-4" />
                   </div>
                   <span className="text-[11px] font-bold text-white uppercase tracking-wider">

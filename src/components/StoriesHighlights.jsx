@@ -11,7 +11,7 @@ export default function StoriesHighlights() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Story Circle Carousel */}
-        <div className="flex items-center gap-6 overflow-x-auto pb-4 pt-2 no-scrollbar scroll-smooth justify-start md:justify-center">
+        <div className="flex items-center gap-4 sm:gap-6 overflow-x-auto pb-4 pt-2 no-scrollbar touch-scroll scroll-smooth justify-start md:justify-center">
           {storyHighlights.map((story) => (
             <motion.button
               key={story.id}
@@ -21,7 +21,7 @@ export default function StoriesHighlights() {
               className="flex flex-col items-center gap-2 group shrink-0 focus:outline-none"
             >
               {/* Glowing Gradient Ring */}
-              <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-full p-[2.5px] bg-gradient-to-tr from-[#946E37] via-[#CFA868] to-[#F4ECD8] group-hover:shadow-[0_0_20px_rgba(207,168,104,0.4)] transition-all">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full p-[2.5px] bg-gradient-to-tr from-[#946E37] via-[#CFA868] to-[#F4ECD8] group-hover:shadow-[0_0_20px_rgba(207,168,104,0.4)] transition-all">
                 <div className="w-full h-full rounded-full p-[2px] bg-[#07080a]">
                   <img
                     src={story.cover}
@@ -31,7 +31,7 @@ export default function StoriesHighlights() {
                 </div>
               </div>
 
-              <span className="text-xs font-medium text-gray-200 group-hover:text-[#DEC293] transition-colors">
+              <span className="text-[11px] sm:text-xs font-medium text-gray-200 group-hover:text-[#DEC293] transition-colors">
                 {story.title}
               </span>
             </motion.button>

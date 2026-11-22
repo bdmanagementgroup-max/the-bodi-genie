@@ -111,11 +111,12 @@ export default function BeforeAfterSlider({ onOpenBooking }) {
           <div className="lg:col-span-8 flex justify-center">
             <div
               ref={containerRef}
-              className="relative aspect-[4/5] sm:aspect-[1/1] w-full max-w-[560px] rounded-3xl overflow-hidden shadow-2xl border border-white/20 select-none cursor-ew-resize group bg-[#050608]"
+              className="relative aspect-[4/5] sm:aspect-[1/1] w-full max-w-[560px] rounded-3xl overflow-hidden shadow-2xl border border-white/20 select-none cursor-ew-resize group bg-[#050608] touch-none"
               onMouseDown={() => setIsDragging(true)}
               onMouseUp={() => setIsDragging(false)}
               onMouseLeave={() => setIsDragging(false)}
               onMouseMove={handleMouseMove}
+              onTouchStart={(e) => handleMove(e.touches[0].clientX)}
               onTouchMove={handleTouchMove}
             >
               {/* After Image (Background) */}
@@ -124,7 +125,7 @@ export default function BeforeAfterSlider({ onOpenBooking }) {
                 alt={current.afterLabel}
                 className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
               />
-              <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-emerald-500/30 text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+              <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-emerald-500/30 text-[11px] sm:text-xs font-bold text-emerald-400 flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>{current.afterLabel}</span>
               </div>
@@ -139,7 +140,7 @@ export default function BeforeAfterSlider({ onOpenBooking }) {
                   alt={current.beforeLabel}
                   className="absolute inset-0 w-full h-full object-cover object-center filter brightness-95"
                 />
-                <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-xs font-bold text-gray-200">
+                <div className="absolute top-4 left-4 z-20 px-3 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs font-bold text-gray-200">
                   <span>{current.beforeLabel}</span>
                 </div>
               </div>
@@ -155,9 +156,9 @@ export default function BeforeAfterSlider({ onOpenBooking }) {
               </div>
 
               {/* Bottom Instructions Badge */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 px-4 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/10 text-[11px] text-gray-300 pointer-events-none flex items-center gap-2">
-                <Sliders className="w-3 h-3 text-[#CFA868]" />
-                <span>Slide left or right to inspect tissue change</span>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 text-[10px] sm:text-[11px] text-gray-300 pointer-events-none flex items-center gap-2 whitespace-nowrap max-w-[92%]">
+                <Sliders className="w-3 h-3 text-[#CFA868] shrink-0" />
+                <span className="truncate">Slide to inspect tissue transformation</span>
               </div>
             </div>
           </div>
